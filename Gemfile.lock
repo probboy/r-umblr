@@ -1,0 +1,39 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    email_address (0.1.11)
+      netaddr (~> 2.0)
+      simpleidn
+    json (2.1.0)
+    mustermann (1.0.3)
+    netaddr (2.0.3)
+    rack (2.0.6)
+    rack-protection (2.0.5)
+      rack
+    ruby_http_client (3.3.0)
+    sendgrid-ruby (5.3.0)
+      ruby_http_client (~> 3.3.0)
+      sinatra (>= 1.4.7, < 3)
+    simpleidn (0.1.1)
+      unf (~> 0.1.4)
+    sinatra (2.0.5)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.5)
+      tilt (~> 2.0)
+    tilt (2.0.9)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  email_address
+  json
+  sendgrid-ruby
+  sinatra
+
+BUNDLED WITH
+   2.0.1

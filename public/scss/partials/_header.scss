@@ -1,0 +1,17 @@
+.header-nav a{
+    color: $velvet
+}
+.site-header {
+    background-color: $orange;
+    text-align: center;
+}
+
+.header-nav {
+    ul{
+        margin: 0;
+        padding: 0;
+    }
+    a {
+    color: $red;
+    }
+}

@@ -1,0 +1,20 @@
+@import 'partials/bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import 'partials/bower_components/normalize-css/normalize';
+@import 'partials/bower_components/susy/sass/susy';
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Raleway');
+@import "bourbon/bourbon";
+
+@import 'partials/variables';
+@import 'partials/base';
+@import 'partials/footer';
+@import 'partials/header';
+@import 'partials/layout';
+@import 'partials/modules';
+@import 'partials/nav-social';
+@import 'partials/menu';
+@import 'partials/product';
+
+p {
+	color: $maroon;
+	font-size: 14px;
+}

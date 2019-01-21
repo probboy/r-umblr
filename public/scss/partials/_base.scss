@@ -1,0 +1,68 @@
+nav{
+    ul{
+        list-style: none;
+    }    
+    li {
+        display: inline-block;
+    
+    }
+    a {
+        padding: 0 10px;
+        &:hover{
+            color: $maroon;
+        }
+    }
+}
+
+h1 {
+    font-size: 36px;
+
+}
+h2{
+    font-size: 30px;
+}
+h3{
+    font-size: 26px;
+}
+
+body{
+    font-family: $san-serif;
+    color: $maroon;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: $serif;
+}
+
+//Form
+#{all-text-inputs} {
+    border: 1px solid #f00;
+}
+
+#{$all-text-inputs-focus},#{$all-text-inputs-hover} {
+    border: 1px solid #0f0;
+}
+
+#{all-text-inputs-active} {
+    border: 1px solid #00f;
+}
+
+//buttons
+
+#{$all-buttons} {
+    background-color: $maroon;
+    border: 1px solid grey;
+    color: $yellow;
+    padding: 10px;
+}
+
+#{$all-buttons-focus},#{$all-buttons-hover} {
+    background-color: $orange;
+}
+
+#{all-buttons-active} {
+    background-color: #00f;
+}
+

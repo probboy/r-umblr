@@ -1,0 +1,46 @@
+.features img {
+    @include size(100%, auto);
+    border-radius: $default-border-radius
+}
+
+.customer img {
+    @include size(150px, auto);
+    border-radius: $default-border-radius
+}
+
+.hero .overlay {
+    background: rgba($yellow, 0.6)
+}
+
+.testimonials {
+    background: $yellow;
+    color: red;
+    text-align: center;
+    blockquote {
+        text-align: center;
+    }
+    .name {
+        display: block;
+    }
+    .quote {
+        font-style: italic;
+        font-family: $serif;
+    }
+}
+ .welcometext {
+     font-weight: 900;
+     color: black;
+     font-size: 1em;
+     
+ }
+ .header-nav{
+     font-size: 2em;
+     a {
+        color:  $maroon;
+        text-decoration: underline dotted;
+     }
+     a:hover {
+        color:  $maroon;
+        text-decoration: underline;
+     }
+ }

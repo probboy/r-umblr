@@ -1,0 +1,64 @@
+<!DOCTYPE>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title><%= h(@page_title) %></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="/css/styles.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body id="<%= h(@body_id) %>">
+    <div class="container-fluid">
+
+      <div class="site-container">
+         <header class="site-header">
+          <div class="wrap">
+              <div class="site-branding">
+              <h1 class="site-title"><%=h(@site_title) %></h1>
+            </div> <!-- site-brandind -->
+            <nav class="header-nav">
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/menu">Menu</a></li>
+              </ul> <!-- ul -->
+            </nav> <!-- nav -->
+          </div> <!--wrap -->
+        <header> <!-- site-header -->
+<!-- start yielding -->
+          <%=yield%>
+<!-- end yielding -->
+        <footer class="site-footer">
+          <div class="wrap">
+            <nav id="social-menu" class="social-menu header-nav" role="navigation">
+              <ul>
+                <li><a href="https://twitter.com/WarrenTai5"><span class="screen-reader-text">Twitter</span></a></li>
+                <li><a href="https://www.facebook.com/warren.w.tai"><span class="screen-reader-text">Facebook</span></a></li>
+                <li><a href="https://www.linkedin.com/in/warren-tai-45188a106/"><span class="screen-reader-text">LinkedIn</span></a></li>
+                <li><a href="https://www.instagram.com/wowwarren/"><span class="screen-reader-text">Instagram</span></a></li>
+              </ul>
+            </nav><!-- .social-menu -->
+          </div> <!-- wrap -->
+          <%# <div class="wrap">
+            <nav class="header-nav">
+              <ul>
+                <li><a href="#" class="twitter">Twitter</a></li>
+                <li><a href="#" class="facebook">Facebook</a></li>
+                <li><a href="#" class="linkedin">LinkedIn</a></li>
+              </ul> <!-- ul -->
+            </nav> <!-- nav -->
+          </div> <!--wrap --> %>
+        </footer>
+      <div> <!--site-container -->
+     
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="js/main.js"></script>
+  </body>
+</html>

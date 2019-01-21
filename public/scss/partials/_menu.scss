@@ -1,0 +1,23 @@
+.product-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style: none;
+    
+    .product-item {
+        flex: 1 1 33%;
+        img {
+            max-width: 80%;
+            display: flex;
+        }
+        h2 {
+            max-width: 80%;
+            display: flex;
+            text-align: center;
+        }
+    }
+}
+
+.imageheader .overlay {
+    background: rgba($yellow, 0.6)
+}

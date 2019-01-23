@@ -1,69 +1,76 @@
 require "sinatra"
 require "sendgrid-ruby"
-include SendGrid
-require "email_address"
-require "json"
+require "sinatra/flash"
+require "em/pure_ruby"
+#require "em/pure_ruby"
+# we must require our models file in order
+#   to pull in the code from the models file
+require_relative "models"
 
 require_relative "helpers"
 
+get "/create" do
+  erb :create
+end
+
+post "/create" do
+  post = Post.create(
+    post: params[:post],
+  )
+end
+
 get "/" do
-  @page_title = "Warren's AI Cake Shop"
-  @body_id = "home"
-  @site_title = "Warren's AI Cake Shop"
-  render_view :index
+  erb :landing
 end
 
-get "/menu" do
-  @page_title = "Warren's AI Cake Shop"
-  @body_id = "home"
-  @site_title = "Warren's AI Cake Shop"
-  render_view :menu
+post "/blogposts" do
+  posts = Post.create(
+    post: params[:post],
+  )
+
+  redirect :user
 end
 
-get "/product" do
-  @page_title = "Warren's AI Cake Shop"
-  @body_id = "home"
-  @site_title = "Warren's AI Cake Shop"
-  render_view :product
+get "/blogposts" do
+  posts = Post.all
+  comments = Comment.all
+  erb :users
 end
 
-post "/" do
-  @name = params["name"]
-  @email = params["email"]
+get "/signup" do
+  erb :signup
+end
 
-  if EmailAddress.valid? @email
-    from = SendGrid::Email.new(email: "warren.w.tai@gmail.com")
-    to = SendGrid::Email.new(email: @email)
-    subject = "Our Catalogue"
-    content = SendGrid::Content.new(
-      type: "text/plain",
-      value: "Dear " + @name + ",\n
-      Attached is the link to the catalogue of our bakery. Enjoy!\n
-      Sincerely, \n
-      Warren\n
-      https://fathomless-island-16806.herokuapp.com/catalogue.pdf",
-    )
+post "/signup" do
+  user = User.create(
+    username: params[:username],
+    password: params[:password],
+  )
 
-    # create a email object with from, to, subject, and content
-    mail = SendGrid::Mail.new(from, subject, to, content)
+  session[:user_id] = user.id
 
-    # sets up the API kwy s
+  post = Post.all
+  redirect "/blogposts"
+end
 
-    sg = SendGrid::API.new(
-      api_key: ENV["SENDGRID_API_KEY"],
-    )
+get "/signin" do
+  erb :signin
+end
 
-    # sends the email
-    response = sg.client.mail._("send").post(request_body: mail.to_json)
-    puts response.status_code
+post "/signin" do
+  user = User.find_by(username: params[:username])
 
-    # display http response body
-    puts response.body
-
-    # display http response headers
-    puts response.headersruby
-    render_view :post
+  if user && user.password == params[:password] && params[:password] != ""
+    session[:user_id] = user.id
+    flash[:info] = "You have been signed in"
+    redirect "/blogposts"
   else
-    render_view :nopost
+    flash[:error] = "There was a problem with your signin"
+    redirect "/signup"
   end
+end
+
+get "/logout" do
+  session[:user_id] = nil
+  redirect "/"
 end

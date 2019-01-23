@@ -20,12 +20,52 @@
             </div> <!-- site-brandind -->
             <nav class="header-nav">
               <ul>
+               <li><a href="/">Landing</a></li>
+               <li><a href="/blogposts">Blog</a></li>
+               <% if session[:user_id] %>
+                <li><a href="/logout">Logout</a></li>
+               <% else %>
+                <li><a href="/signup">Signup</a></li>
+               <li><a href="/signin">Signin</a></li>
+                <% end %>
                 <li><a href="/">Home</a></li>
-                <li><a href="/menu">Menu</a></li>
               </ul> <!-- ul -->
+              
             </nav> <!-- nav -->
+            
+
           </div> <!--wrap -->
         <header> <!-- site-header -->
+         
+     
+      <!-- 
+        if the user is logged out then
+          provide them with the option to sign up or login
+      -->
+     
+  </nav>
+
+  <!-- 
+    Check if the user has set a flash message then display it
+  -->
+  <% if flash[:info] %>
+    <!-- 
+      display a flash info message if its been set in the route
+    -->
+    <div id="flash-info">
+      <%= flash[:info] %>
+    </div>
+  <% end %>
+
+  <% if flash[:error] %>
+    <!-- 
+      display a flash error message if its been set in the route
+    -->
+    <div id="flash-error">
+      <%= flash[:error] %>
+    </div>
+  <% end %>
+
 <!-- start yielding -->
           <%=yield%>
 <!-- end yielding -->

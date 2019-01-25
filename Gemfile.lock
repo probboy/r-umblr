@@ -15,16 +15,25 @@ GEM
     arel (9.0.0)
     backports (3.11.4)
     concurrent-ruby (1.1.4)
+    em (0.0.1)
+      eventmachine
+    email_address (0.1.11)
+      netaddr (~> 2.0)
+      simpleidn
+    eventmachine (1.2.7)
     i18n (1.5.3)
       concurrent-ruby (~> 1.0)
     minitest (5.11.3)
     multi_json (1.13.1)
     mustermann (1.0.3)
+    netaddr (2.0.3)
     pg (1.1.4)
     rack (2.0.6)
     rack-protection (2.0.5)
       rack
     rake (12.3.2)
+    simpleidn (0.1.1)
+      unf (~> 0.1.4)
     sinatra (2.0.5)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -48,12 +57,17 @@ GEM
     tilt (2.0.9)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.5)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   activerecord
+  em
+  email_address
   pg
   rake
   sinatra

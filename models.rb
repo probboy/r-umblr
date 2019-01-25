@@ -6,8 +6,9 @@ require "pg"
 #   authentication
 # this is the equivalent of using:
 #   ActiveRecord::Base.establish_connection
-set :database, "postgresql:rumblr"
-
+configure :development do
+  set :database, "postgresql:rumblr"
+end
 
 configure :production do
   # this environment variable is auto generated/set by heroku

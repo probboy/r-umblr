@@ -2,7 +2,6 @@ require "sinatra"
 require "sinatra/activerecord"
 require "sinatra/flash"
 require "em/pure_ruby"
-require "rails"
 
 #require "em/pure_ruby"
 # we must require our models file in order

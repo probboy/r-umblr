@@ -42,7 +42,7 @@ post "/" do
   @user = User.find_by(username: params[:username])
   if @user == ""
     flash[:warning] = "No such user found."
-  elsif @user.password = password
+  elsif @user.password == password
     session[:user_id] = @user.id
     flash[:info] = "You have successfully logged in, #{@user.firstname}."
   elsif flash[:warning] = "Invalid username or password."

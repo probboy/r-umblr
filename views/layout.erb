@@ -10,6 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body id="<%= h(@body_id) %>">
+  
     <div class="container-fluid">
 
       <div class="site-container">
@@ -20,7 +21,7 @@
             </div> <!-- site-brandind -->
             <nav class="header-nav">
               <ul>
-               <li><a href="/">Landing</a></li>
+               <li><a href="/profile">Profile</a></li>
                <li><a href="/blogposts">Blog</a></li>
                <% if session[:user_id] %>
                 <li><a href="/logout">Logout</a></li>
@@ -35,6 +36,13 @@
             
 
           </div> <!--wrap -->
+          <div class="hero">
+          <div class="overlay">
+          <p>
+           Vent all your anger about our out-of-date, last-of-the-centry monument that is the MTA, our dear subway system. Compared to the subway system of all other indutrialized countries (or all other subway system in our country for that matter) our subway system suffers from debilitating delays. It's dirty and unsafe. It's cold in the winter and hot in the summer. It's time to do something. Vent all your frustration and compared our system with other world-class system here!
+          </p>
+          </div><!--overlay-->
+          </div><!--hero-->
         <header> <!-- site-header -->
          
      
@@ -48,23 +56,18 @@
   <!-- 
     Check if the user has set a flash message then display it
   -->
-  <% if flash[:info] %>
-    <!-- 
-      display a flash info message if its been set in the route
-    -->
-    <div id="flash-info">
-      <%= flash[:info] %>
-    </div>
-  <% end %>
-
-  <% if flash[:error] %>
-    <!-- 
-      display a flash error message if its been set in the route
-    -->
-    <div id="flash-error">
-      <%= flash[:error] %>
-    </div>
-  <% end %>
+  <div id="wrapper" class="container-fluid">
+    <%if flash.keys.length > 0 %>
+      <% flash.keys.each do |type| %>
+        <div class="flash <%= type %>">
+          <%= flash[type] %>
+          <button class="remove-btn btn btn-secondary">X</button>
+        </div>
+      <% end %>
+      <script src=<%= url('scripts/flash.js') %>></script>
+<% end %>
+   
+</div>
 
 <!-- start yielding -->
           <%=yield%>

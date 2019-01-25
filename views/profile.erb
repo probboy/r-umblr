@@ -1,0 +1,8 @@
+Username: <%=@user.username%><br>
+Firstname: <%=@user.firstname%><br>
+Lastname: <%=@user.lastname%><br>
+Email: <%=@user.email%><br>
+Birthday: <%=@user.birthday.to_s.split(" ")[0]%><br>
+Password: <%=@user.password%><br>
+Account Created: <%=@user.date_created%><br>
+<a href="/destroy" type="button" class="btn btn-danger">Delete Account</button>

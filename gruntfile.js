@@ -68,6 +68,6 @@ module.exports = function(grunt) {
 	require('load-grunt-tasks')(grunt);
 
 	//Custom tasks
-	grunt.registerTask('default', ['watch']);
+	grunt.registerTask('default', ['sass','watch']);
 
 };

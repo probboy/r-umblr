@@ -1,6 +1,9 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "sinatra"
-gem "sendgrid-ruby"
-gem "email_address"
-gem "json"
+gem 'sinatra'
+gem 'pg'
+gem 'activerecord'
+gem 'sinatra-activerecord'
+gem 'rake'
+gem 'sinatra-flash'
+gem 'sinatra-reloader'

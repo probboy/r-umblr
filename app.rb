@@ -14,27 +14,9 @@ require "email_address"
 
 enable :sessions
 
-# bleh_app.rb
 require "sinatra/base"
 require "sinatra/flash"
 
-# bleh_app.rb
-require "sinatra/base"
-require "sinatra/flash"
-
-# class BlehApp < Sinatra::Base
-#   enable :sessions
-#   register Sinatra::Flash
-
-#   get "/bleh" do
-#     if flash[:blah]
-#       # The flash collection is cleared after any request that uses it
-#       "Have you ever felt blah? Oh yes. #{flash[:blah]} Remember?"
-#     else
-#       "Oh, now you're only feeling bleh?"
-#     end
-#   end
-# end
 
 get "/test" do
   erb :test

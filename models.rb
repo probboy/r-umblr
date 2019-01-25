@@ -6,13 +6,17 @@ require "pg"
 #   authentication
 # this is the equivalent of using:
 #   ActiveRecord::Base.establish_connection
-set :database, "postgresql:rumblr"
+# set :database, "postgresql:rumblr"
 
-configure :production do
-  # this environment variable is auto generated/set by heroku
-  #   check Settings > Reveal Config Vars on your heroku app admin panel
-  set :database, ENV["DATABASE_URL"]
-end
+
+configure :development do
+  set :database, 'postgresql:rumblr'
+  end
+  
+configure :development do
+    set :database, ENV['DATABASE_URL']
+  end
+
 
 # creates the User model
 #   double check you have a users table before creating
